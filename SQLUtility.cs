@@ -25,7 +25,7 @@ namespace CPUFrameWork
             return dt;
         }
 
-        public static void ExecuteSQl(string sqlstatement)
+        public static void ExecuteSQL(string sqlstatement)
         {
             GetDataTable(sqlstatement);
         }
@@ -48,4 +48,3 @@ namespace CPUFrameWork
         }
     }
 }
-// note

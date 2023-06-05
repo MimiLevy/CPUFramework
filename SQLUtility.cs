@@ -49,6 +49,10 @@ namespace CPUFrameWork
             return GetDataTable(new SqlCommand(sqlstatement));
         }
 
+        public static void ExecuteSQL(SqlCommand cmd)
+        {
+            GetDataTable(cmd);
+        }
         public static void ExecuteSQL(string sqlstatement)
         {
             GetDataTable(sqlstatement);

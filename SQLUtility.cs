@@ -258,6 +258,19 @@ namespace CPUFrameWork
             }
             return value;
         }
+        public static bool GetValueFromFirstRowAsBool(DataTable dt, string columnname)
+        {
+            bool b = false;
+            if (dt.Rows.Count > 0)
+            {
+                DataRow r = dt.Rows[0];
+                if (r[columnname] != null && r[columnname] is bool)
+                {
+                    b = (bool)r[columnname];
+                }
+            }
+            return b;
+        }
         public static bool TableHasChanges(DataTable dt)
         {
             bool b = false;

@@ -118,7 +118,7 @@ namespace CPUFrameWork
         private static void CheckReturnValue(SqlCommand cmd)
         {
             int returnvalue = 0;
-            string msg = "";
+            string? msg = "";
             if (cmd.CommandType == CommandType.StoredProcedure)
             {
                 foreach (SqlParameter p in cmd.Parameters)
@@ -166,6 +166,7 @@ namespace CPUFrameWork
 
         public static void SetParamValue(SqlCommand cmd, string paramname, object value)
         {
+            if(paramname.StartsWith("@") == false) { paramname = "@" + paramname; }
             try
             {
                 cmd.Parameters[paramname].Value = value;

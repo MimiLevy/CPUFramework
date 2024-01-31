@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace CPUFramework
 {
-    public class BizObject<T> : INotifyPropertyChanged where T : BizObject<T>, new()
+    public class bizObject<T> : INotifyPropertyChanged where T : bizObject<T>, new()
     {
         string _typename = ""; string _tablename = ""; string _getsproc = ""; string _updatesproc = ""; string _deletesproc = "";
         string _primarykeyname = ""; string _primarykeyparamname = "";
@@ -16,7 +16,7 @@ namespace CPUFramework
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public BizObject()
+        public bizObject()
         {
             Type t = this.GetType();
             _typename = t.Name;

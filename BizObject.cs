@@ -45,7 +45,7 @@ namespace CPUFramework
 
         public List<T> GetList(bool includeblank)
         {
-            SqlCommand cmd = SQLUtility.GetSqlCommand("PartyGet");
+            SqlCommand cmd = SQLUtility.GetSqlCommand(_getsproc);
             SQLUtility.SetParamValue(cmd, "@All", 1);
             SQLUtility.SetParamValue(cmd, "@IncludeBlank", includeblank);
             var dt = SQLUtility.GetDataTable(cmd);
@@ -54,7 +54,8 @@ namespace CPUFramework
 
         protected List<T> GetListFromDataTable(DataTable dt) 
         {
-            List<T> lst = new(); foreach (DataRow dr in dt.Rows)
+            List<T> lst = new(); 
+            foreach (DataRow dr in dt.Rows)
             {
                 T obj = new();
                 obj.LoadProps(dr);

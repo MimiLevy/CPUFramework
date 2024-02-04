@@ -43,7 +43,7 @@ namespace CPUFramework
             return dt;
         }
 
-        public List<T> GetList(bool includeblank)
+        public List<T> GetList(bool includeblank = false)
         {
             SqlCommand cmd = SQLUtility.GetSqlCommand(_getsproc);
             SQLUtility.SetParamValue(cmd, "@All", 1);
